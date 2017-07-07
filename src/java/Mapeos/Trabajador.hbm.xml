@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-jun-2017 21:03:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Trabajador" table="trabajador" catalog="my_parking" optimistic-lock="version">
+        <id name="idTrabajador" type="java.lang.Integer">
+            <column name="id_Trabajador" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="parqueadero" class="Modelos.Parqueadero" fetch="select">
+            <column name="Parqueadero_id_Parqueadero" not-null="true" />
+        </many-to-one>
+        <property name="nombres" type="string">
+            <column name="Nombres" length="50" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="Apellidos" length="50" not-null="true" />
+        </property>
+        <property name="tipoDocumento" type="string">
+            <column name="Tipo_Documento" length="3" not-null="true" />
+        </property>
+        <property name="doumento" type="string">
+            <column name="Doumento" length="20" not-null="true" />
+        </property>
+        <property name="contrasena" type="string">
+            <column name="Contrasena" length="100" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="Correo" length="50" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
