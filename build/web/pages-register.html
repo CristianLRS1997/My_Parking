@@ -1,0 +1,156 @@
+<!--
+ * CoreUI - Open Source Bootstrap Admin Template
+ * @version v1.0.0-alpha.6
+ * @link http://coreui.io
+ * Copyright (c) 2017 creativeLabs Łukasz Holeczek
+ * @license MIT
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
+    <meta name="author" content="Lukasz Holeczek">
+    <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+
+    <title>CoreUI Bootstrap 4 Admin Template</title>
+
+    <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mx-4">
+                    <div class="card-block p-4">
+                        <h1>Registrar</h1>
+                        <p class="text-muted">Create your account</p>
+                        <form  method="post" action="Cliente/create"  >
+                        <div class="form-group mb-3">
+                                            <label for="postal-code">Nombres</label>
+                                            <input type="text" name="Nombres" style="width:450px;" class="form-control"  id="postal-code" placeholder="Ingrese Nombres"/>
+                                        </div>
+                        <div class="form-group mb-3">
+                                            <label for="postal-code">Apellidos</label>
+                                            <input type="text" name="Apellidos" style="width:450px;" class="form-control"  id="postal-code" placeholder="Ingrese Apellidos"/>
+                                        </div>
+                        
+                        <div class="row" style="padding-left: 15px;">
+
+                                         <div class="postal-code">
+                                            <label for="ccmonth">Tipo Documento</label>
+                                            <select name="TipoD" class="form-control" id="ccmonth">
+                                                <option value="0">Seleccione..</option>
+                                                    <option value="CC">C.C</option>
+                                                    <option value="TI">T.I</option>
+                                                    <option value="CE">C.E</option>
+                                                </select>
+                                            </div>
+
+                                        <div class="form-group col-sm-4">
+                                            <label for="postal-code">Documento</label>
+                                            <input type="text" name="Documento" style="width:200px;" class="form-control"  id="postal-code" placeholder="Ingrese Documento">
+                                        </div>
+
+                        </div>
+                        <div class="form-group mb-3">
+                                            <label for="postal-code">Celular</label>
+                                            <input type="text" name="Celular" style="width:200px;" class="form-control"  id="postal-code" placeholder="Ingrese Numero De Celular">
+                                        </div>
+                        <div class="input-group mb-3">
+                            
+                            <input type="text" name="Email" class="form-control" placeholder="Email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            
+                            <input type="password" class="form-control" placeholder="Contraseña">
+                        </div>
+
+                        <div class="input-group mb-4">
+                            
+                            <input type="password" name="Contraseña" class="form-control" placeholder="Repita Su Contraseña">
+                        </div>
+                            <div class="row" style="padding-left: 15px;">
+
+                                         <div class="postal-code">
+                                            <label for="ccmonth">Tipo Vehiculo</label>
+                                            <select name="TipoV" class="form-control" id="ccmonth">
+                                                <option value="0">Seleccione..</option>
+                                                    <option value="Automovil">Automovil</option>
+                                                    <option value="Motocicleta">Motocicleta</option>
+                                                    
+                                                </select>
+                                            </div>
+
+                                        <div class="form-group col-sm-4">
+                                            <label for="postal-code">Placa</label>
+                                            <input type="text" name="Placa" style="width:200px;" class="form-control"  id="postal-code" placeholder="Ingrese Su Placa">
+                                        </div>
+
+                        </div>
+                        <div class="row" >
+
+                            <div class="form-group col-sm-4">
+                                            <label for="postal-code">Foto</label>
+                                            <input type="text" name="Foto" style="width:200px;" class="form-control"  id="postal-code" placeholder="Ingrese Su Placa">
+                                        </div>
+                            
+                                         <div class="postal-code" style="padding-left: 65px;">
+                                            <label for="ccmonth">Estado</label>
+                                            <select name="Estado" class="form-control" id="ccmonth">
+                                                <option value="0">Seleccione..</option>
+                                                    <option value="Activo">Activo</option>
+                                                    <option value="Inactivo">Inactivo</option>
+                                                    
+                                                </select>
+                                            </div>
+
+                                        
+
+                        </div>
+                            <input type="submit" class="btn btn-block btn-success" value="Registrarse"/>
+                        </form>
+                    </div>
+
+                    
+                    <div class="card-footer p-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-block btn-facebook" type="button">
+                                    <span>facebook</span>
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-block btn-twitter" type="button">
+                                    <span>twitter</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and necessary plugins -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

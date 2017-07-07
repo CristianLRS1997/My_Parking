@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-jun-2017 21:03:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Cliente" table="cliente" catalog="my_parking" optimistic-lock="version">
+        <id name="idCliente" type="java.lang.Integer">
+            <column name="id_Cliente" />
+            <generator class="identity" />
+        </id>
+        <property name="nombres" type="string">
+            <column name="Nombres" length="50" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="Apellidos" length="50" not-null="true" />
+        </property>
+        <property name="tipoDocumento" type="string">
+            <column name="Tipo_Documento" length="3" not-null="true" />
+        </property>
+        <property name="documento" type="string">
+            <column name="Documento" length="20" not-null="true" />
+        </property>
+        <property name="celular" type="int">
+            <column name="Celular" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" not-null="true" />
+        </property>
+        <property name="contrasena" type="string">
+            <column name="Contrasena" length="100" not-null="true" />
+        </property>
+        <property name="tipoVehiculo" type="string">
+            <column name="Tipo_Vehiculo" length="11" not-null="true" />
+        </property>
+        <property name="placa" type="string">
+            <column name="Placa" length="7" not-null="true" />
+        </property>
+        <property name="foto" type="string">
+            <column name="Foto" length="16777215" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="8" not-null="true" />
+        </property>
+        <set name="mensualidads" table="mensualidad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cliente_id_Cliente" not-null="true" />
+            </key>
+            <one-to-many class="Modelos.Mensualidad" />
+        </set>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cliente_id_Cliente" not-null="true" />
+            </key>
+            <one-to-many class="Modelos.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-jun-2017 21:03:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Parqueadero" table="parqueadero" catalog="my_parking" optimistic-lock="version">
+        <id name="idParqueadero" type="java.lang.Integer">
+            <column name="id_Parqueadero" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="nit" type="string">
+            <column name="Nit" length="11" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="Direccion" length="45" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="Telefono" length="10" not-null="true" />
+        </property>
+        <property name="cantidadPuestos" type="int">
+            <column name="Cantidad_Puestos" not-null="true" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="Ciudad" length="45" not-null="true" />
+        </property>
+        <property name="horarioApertura" type="string">
+            <column name="Horario_Apertura" length="8" not-null="true" />
+        </property>
+        <property name="horarioCierre" type="string">
+            <column name="Horario_Cierre" length="8" not-null="true" />
+        </property>
+        <property name="logo" type="string">
+            <column name="Logo" length="16777215" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="8" not-null="true" />
+        </property>
+        <property name="pisos" type="int">
+            <column name="Pisos" not-null="true" />
+        </property>
+        <set name="puestos" table="puesto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Parqueadero_id_Parqueadero" not-null="true" />
+            </key>
+            <one-to-many class="Modelos.Puesto" />
+        </set>
+        <set name="trabajadors" table="trabajador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Parqueadero_id_Parqueadero" not-null="true" />
+            </key>
+            <one-to-many class="Modelos.Trabajador" />
+        </set>
+    </class>
+</hibernate-mapping>

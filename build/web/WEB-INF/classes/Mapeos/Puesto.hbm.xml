@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-jun-2017 21:03:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Puesto" table="puesto" catalog="my_parking" optimistic-lock="version">
+        <id name="idPuesto" type="java.lang.Integer">
+            <column name="id_Puesto" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="parqueadero" class="Modelos.Parqueadero" fetch="select">
+            <column name="Parqueadero_id_Parqueadero" not-null="true" />
+        </many-to-one>
+        <property name="numero" type="int">
+            <column name="Numero" not-null="true" />
+        </property>
+        <property name="piso" type="int">
+            <column name="Piso" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="65535" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="11" not-null="true" />
+        </property>
+        <set name="mensualidads" table="mensualidad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Puesto_id_Puesto" not-null="true" />
+            </key>
+            <one-to-many class="Modelos.Mensualidad" />
+        </set>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Puesto_id_Puesto" not-null="true" />
+            </key>
+            <one-to-many class="Modelos.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>

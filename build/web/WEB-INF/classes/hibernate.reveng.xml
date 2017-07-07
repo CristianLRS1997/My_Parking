@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="my_parking"/>
+  <table-filter match-name="trabajador"/>
+  <table-filter match-name="mensualidad"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="puesto"/>
+  <table-filter match-name="parqueadero"/>
+  <table-filter match-name="reserva"/>
+</hibernate-reverse-engineering>

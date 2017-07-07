@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-jun-2017 21:03:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Mensualidad" table="mensualidad" catalog="my_parking" optimistic-lock="version">
+        <id name="idMensualidad" type="java.lang.Integer">
+            <column name="id_Mensualidad" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="Modelos.Cliente" fetch="select">
+            <column name="Cliente_id_Cliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="puesto" class="Modelos.Puesto" fetch="select">
+            <column name="Puesto_id_Puesto" not-null="true" />
+        </many-to-one>
+        <property name="fechaEntrada" type="string">
+            <column name="Fecha_Entrada" length="10" not-null="true" />
+        </property>
+        <property name="fechaSalida" type="string">
+            <column name="Fecha_Salida" length="10" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
