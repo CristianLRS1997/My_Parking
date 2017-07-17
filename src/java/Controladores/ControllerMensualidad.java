@@ -99,6 +99,8 @@ public class ControllerMensualidad extends HttpServlet {
         s.save(m);
         s.getTransaction().commit();     
         s.close(); 
+        
+        response.sendRedirect("/AdminMensualidad.jsp");
       
      
      
@@ -121,7 +123,7 @@ private void listarMensualidad(HttpServletRequest request, HttpServletResponse r
         obj.put("fe", ms.get(i).getFechaEntrada());
         obj.put("fs", ms.get(i).getFechaSalida());
         obj.put("cl", ms.get(i).getCliente().getNombres());
-        obj.put("pu", ms.get(i).getPuesto().getParqueadero());
+        obj.put("pu", ms.get(i).getPuesto());
         obj.put("es", ms.get(i).getEstado()); 
         
         json.add(obj);

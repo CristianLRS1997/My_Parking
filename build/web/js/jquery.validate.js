@@ -269,13 +269,14 @@ $.extend($.validator, {
 		remote: "Por favor arregla este campo.",
 		email: "Por favor ingrese un direccion de email correcta.",
 		url: "Por favor introduzca un URL válido.",
-		date: "Por favor introduzca una fecha valida.",
+		date: "Por favor introduzca un valor  valido.",
 		dateISO: "Introduzca una fecha válida (ISO).",
 		number: "Por favor ingrese un número valido.",
 		digits: "Por favor ingrese solo dígitos.",
 		creditcard: "Por favor, introduzca un número de tarjeta de crédito válida.",
 		equalTo: "Por favor, introduzca el mismo valor de nuevo.",
 		accept: "Introduzca un valor con una extensión válida.",
+                password:"introduzca una contraseña",
 		maxlength: $.validator.format("Ingrese un máximo de {0} caracteres."),
 		minlength: $.validator.format("Introduzca al menos {0} caracteres."),
 		rangelength: $.validator.format("Introduzca un valor entre {0} y {1} caracteres."),
@@ -769,7 +770,8 @@ $.extend($.validator, {
 		number: {number: true},
 		numberDE: {numberDE: true},
 		digits: {digits: true},
-		creditcard: {creditcard: true}
+		creditcard: {creditcard: true},
+                password:{ password:true}
 	},
 
 	addClassRules: function(className, rules) {

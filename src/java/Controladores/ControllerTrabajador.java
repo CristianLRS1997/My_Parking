@@ -70,13 +70,13 @@ public class ControllerTrabajador extends HttpServlet {
       
       
        
-          String nom = request.getParameter("Nombres");
-          String ape =request.getParameter("Apellidos");
-          String td = request.getParameter("TDocumento");
-          String doc =request.getParameter("Documento");
-          String cof =request.getParameter("conficontra");
-          String cor =request.getParameter("correo");
-          String es = request.getParameter("Estado");
+          String nom = request.getParameter("nombres");
+          String ape =request.getParameter("apellidos");
+          String td = request.getParameter("tdocumento");
+          String doc =request.getParameter("documento");
+          String cof =request.getParameter("conficontrasena");
+          String cor =request.getParameter("email");
+          String es = request.getParameter("estado");
           Parqueadero pq = new Parqueadero();
           pq.setIdParqueadero(1);
            
@@ -92,7 +92,7 @@ public class ControllerTrabajador extends HttpServlet {
         s.getTransaction().commit();     
         s.close(); 
       
-     
+    
      
      }
 
@@ -115,10 +115,9 @@ public class ControllerTrabajador extends HttpServlet {
             obj.put("apellidos", tr.get(i).getApellidos());
             obj.put("tdocumento", tr.get(i).getTipoDocumento());
             obj.put("documento", tr.get(i).getDoumento());
-            obj.put("contrasena", tr.get(i).getContrasena());
-            obj.put("correo", tr.get(i).getCorreo());
+            obj.put("email", tr.get(i).getCorreo());
             obj.put("estado", tr.get(i).getEstado());
-            obj.put("parqueadero", tr.get(i).getParqueadero());
+          
             
             
             listaJson.add(obj);

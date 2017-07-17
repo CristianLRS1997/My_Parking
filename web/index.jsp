@@ -1,3 +1,25 @@
+<% 
+     response.setHeader("Cache-Control", "no-cache");
+     response.setHeader("Cache-Control", "no-store");
+     response.setDateHeader("Expires", 0);
+     response.setHeader("Pragma", "no-cache");
+     try {
+     
+     if (session.getAttribute("usersession")==null) {
+         
+         response.sendRedirect("login.jsp");
+             
+         }
+     
+     }catch (Exception ex){
+     response.sendRedirect("login.jsp");
+     
+     }
+     
+
+
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +53,7 @@
         <li class="divider"></li>
         <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
         <li class="divider"></li>
-        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+        <li><a href="ControllerLogout"><i class="icon-key"></i> Log Out</a></li>
       </ul>
     </li>
     <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
@@ -46,7 +68,7 @@
       </ul>
     </li>
     <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+    <li class=""><a title="" href="ControllerLogout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -59,19 +81,28 @@
 <!--sidebar-menu-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
-    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li class="active"><a href="index.jsp"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
    
-    <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
-    
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
+   
+    <li class="submenu"> <a href="#"><i class="icon icon-user"></i> <span>Trabajador</span> <span class="label label-important"></span></a>
       <ul>
        
-        <li><a href="form-validation.html">Form with Validation</a></li>
+        
+        <li><a href="RegTrabajador.jsp">Registro Trabajador</a></li>
+        <li><a href="AdminTrabajador.jsp">Administrar trabajador</a></li>
+        
+      </ul>
+    </li>
+    <li class="submenu"> <a href="#"><i class="icon icon-calendar"></i> <span>Mensualidad</span> <span class="label label-important"></span></a>
+      <ul>
+       
+         <li><a href="RegMensualidad.jsp">Registro Mensualidad</a></li>
+        <li><a href="AdminMensualidad.jsp">Administrar Mensualidad</a></li>
         
       </ul>
     </li>
     
-    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important"></span></a>
       <ul>
         <li><a href="error403.html">Error 403</a></li>
         <li><a href="error404.html">Error 404</a></li>
@@ -101,7 +132,7 @@
 <div id="content">
 <!--breadcrumbs-->
   <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+    <div id="breadcrumb"> <a href="index.jsp" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
   </div>
 <!--End-breadcrumbs-->
 
@@ -109,7 +140,7 @@
   <div class="container-fluid">
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
-        <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
+        <li class="bg_lb"> <a href="index.jsp"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
         <li class="bg_lg span3"> <a href="charts.html"> <i class="icon-signal"></i> Charts</a> </li>
         <li class="bg_ly"> <a href="widgets.html"> <i class="icon-inbox"></i><span class="label label-success">101</span> Widgets </a> </li>
         <li class="bg_lo"> <a href="tables.html"> <i class="icon-th"></i> Tables</a> </li>

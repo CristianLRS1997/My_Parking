@@ -1,5 +1,5 @@
 <%-- 
-    Document   : RegTrabajador
+    Document   : PerfilTrabajador
     Created on : 7/07/2017, 07:02:23 PM
     Author     : usuario
 --%>
@@ -53,7 +53,7 @@
   <ul class="nav">
     <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+          <li><a href="PerfilTrabajador.jsp"><i class="icon-user"></i> My Profile</a></li>
         <li class="divider"></li>
         <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
         <li class="divider"></li>
@@ -147,67 +147,57 @@
            
           </div>
           <div class="widget-content nopadding">
-            <form class="form-horizontal" method="post" action="Trabajador/create" id="Trabajador" >
+            <form class="form-horizontal" method="post" action="#" id="Trabajador" >
               <div class="control-group">
                 <label class="control-label">Nombres</label>
                 <div class="controls">
-                    <input type="text" name="nombres" placeholder="Ingresa tu nombre"  required>
+                    <p></p>
                 </div>
               </div>
                  <div class="control-group">
                 <label class="control-label">Apellidos</label>
                 <div class="controls">
-                    <input type="text" name="apellidos" placeholder="Ingresa tu nombre" required >
+                   
                 </div>
               </div>
                  <div class="control-group">
                 <label class="control-label">Tipo Documento</label>
                 <div class="controls">
-                    <select name="tdocumento" style="width: 150px">
-                        <option value="CC">CC</option>
-                        <option value="CE">CE</option>
-                    </select>
+                    
                 </div>
               </div>
                  <div class="control-group">
                 <label class="control-label">Documento</label>
                 <div class="controls">
-                    <input type="text" name="documento" placeholder="Ingresa tu documento" required >
+                    
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label"> Email</label>
                 <div class="controls">
-                  <input type="email" name="email" placeholder="Ingresa tu email"  required>
+                 
                 </div>
               </div>
                 <div class="control-group">
                   <label class="control-label">Contraseña</label>
                   <div class="controls">
-                    <input type="password" name="contrasena" id="pwd" required />
+                    
                 </div>
                 <div class="control-group">
                   <label class="control-label">Confirm Contraseña</label>
                   <div class="controls">
-                    <input type="password" name="conficontrasena" id="pwd2" required />
+                    
                   </div>
                 </div>
                    <div class="control-group">
               <label class="control-label">Estado</label>
               <div class="controls">
-                <label>
-                  <input type="radio" name="estado" value='Activo' checked />
-                  Activo</label>
-                <label>
-                  <input type="radio" name="estado" value='Inactivo' />
-                  Inactivo</label>
-                <label>
-                 
+                
               </div>
             </div>
              
               <div class="form-actions">
-              <button type="submit" class="btn btn-success">Save</button>
+              <button type="submit" class="btn btn-success">Modificar</button>
               
               <button type="reset" class="btn btn-danger">Cancel</button>
             </div>
